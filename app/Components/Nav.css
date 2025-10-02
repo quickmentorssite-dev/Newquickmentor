@@ -1,0 +1,216 @@
+.WNav{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    padding: 20px 110px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+.NavRight{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Geist';
+}
+.NavLeft{
+    padding-top: 10px;
+}
+.NavLeft ul{
+    display: flex;
+    gap: 40px;
+    margin: 0;
+}
+.NavLeft ul li{
+    list-style: none;
+    font-family: 'Geist Mono';
+}
+*{
+    margin: 0;
+}
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Target your nav links specifically */
+  .nav-link {
+    text-decoration: none;
+    color: aliceblue;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* Green underline on hover */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: limegreen;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Active class to highlight clicked link (optional, JS required to toggle this) */
+  .nav-link.active {
+    color: cyan;
+    font-weight: bold;
+  }
+  /* Base styles (desktop) */
+.WNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: #000000;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+}
+
+.NavRight {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.NavLeft ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.NavLeft ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Hamburger menu hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle animation for hamburger */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE STYLES */
+@media (max-width: 600px) {
+  .NavLeft ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .NavLeft {
+    position: absolute;
+    top: 60px; /* adjust according to navbar height */
+    right: 1rem;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+    border-radius: 4px;
+    padding: 1rem;
+    width: 180px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+  }
+
+  .NavLeft.active {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop horizontal menu on mobile */
+  .NavLeft ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Optional: make nav links bigger and easier to tap */
+  .NavLeft ul li a {
+    font-size: 1.1rem;
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .NavLeft {
+    display: none; /* Hide menu completely by default */
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+    border-radius: 3px;
+    padding: 1rem;
+    width: 180px;
+    z-index: 100;
+  }
+
+  .NavLeft.active {
+    display: block; /* Show menu when active */
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  .NavLeft ul {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .NavLeft ul li a {
+    font-size: 1.1rem;
+    display: block;
+    color: white;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Slide-in animation (optional) */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}

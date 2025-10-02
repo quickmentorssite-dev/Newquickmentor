@@ -1,0 +1,81 @@
+.future-products-section {
+    padding: 80px 20px;
+    background-color: #f8f9fc;
+  }
+  
+  .future-products-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .future-products-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .future-products-title {
+    color: #001f7f;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .future-products-subtitle {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .future-products-description {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .future-products-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .future-products-img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Responsive styles for phones (max-width: 600px) */
+@media (max-width: 600px) {
+  #RFP .future-products-container {
+    display: flex;
+    flex-direction: column;   /* stack text and image vertically */
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  #RFP .future-products-text,
+  #RFP .future-products-image {
+    width: 100%;              /* full width on mobile */
+    max-width: 400px;         /* optional max width for readability */
+    text-align: center;       /* center text and image container */
+  }
+
+  #RFP .future-products-img {
+    width: 80%;               /* responsive image width */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #RFP .future-products-title {
+    font-size: 1.5rem;        /* slightly smaller title for mobile */
+  }
+
+  #RFP .future-products-subtitle,
+  #RFP .future-products-description {
+    font-size: 1rem;          /* adjust paragraph font size */
+  }
+}

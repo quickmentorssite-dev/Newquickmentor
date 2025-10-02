@@ -1,0 +1,95 @@
+'use client';
+import React, { useState, useEffect } from 'react';
+import '../styles/PerfectPath.css';
+
+const getRandomPath = (gridSize, pathLength) => {
+  const path = new Set();
+  while (path.size < pathLength) {
+    const idx = Math.floor(Math.random() * gridSize * gridSize);
+    path.add(idx);
+  }
+  return [...path];
+};
+
+const PerfectPath = () => {
+  const [gridSize, setGridSize] = useState(3);
+  const [path, setPath] = useState([]);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [previewing, setPreviewing] = useState(true);
+  const [clickedPath, setClickedPath] = useState([]);
+  const [message, setMessage] = useState('');
+  const [level, setLevel] = useState(1);
+
+  const totalTiles = gridSize * gridSize;
+
+  useEffect(() => {
+    const newPath = getRandomPath(gridSize, Math.min(3 + level, totalTiles));
+    setPath(newPath);
+    setPreviewing(true);
+    setClickedPath([]);
+    setCurrentStep(0);
+    setMessage('');
+
+    const timer = setTimeout(() => {
+      setPreviewing(false);
+    }, 2000 - Math.min(level * 100, 1500)); // preview gets faster
+
+    return () => clearTimeout(timer);
+  }, [gridSize, level]);
+
+  const handleClick = (index) => {
+    if (previewing || message) return;
+
+    setClickedPath((prev) => [...prev, index]);
+
+    if (index !== path[currentStep]) {
+      setMessage('❌ Boom! Try Again.');
+      setTimeout(() => {
+        setLevel(1);
+        setGridSize(3);
+      }, 1500);
+      return;
+    }
+
+    if (currentStep + 1 === path.length) {
+      setMessage('✅ Perfect! Level Up!');
+      setTimeout(() => {
+        setLevel((prev) => prev + 1);
+        setGridSize((prev) => Math.min(prev + 1, 6)); // max 6x6
+      }, 1500);
+    } else {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
+  return (
+    <div className="path-container">
+      <h2>🧭 Perfect Path</h2>
+      <p>Level: {level}</p>
+      <div
+        className="grid"
+        style={{
+          gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
+          gridTemplateRows: `repeat(${gridSize}, 1fr)`,
+        }}
+      >
+        {Array.from({ length: totalTiles }, (_, i) => (
+          <div
+            key={i}
+            className={`tile ${
+              previewing && path.includes(i)
+                ? 'highlight'
+                : clickedPath.includes(i)
+                ? 'clicked'
+                : ''
+            }`}
+            onClick={() => handleClick(i)}
+          ></div>
+        ))}
+      </div>
+      <p className="message">{message}</p>
+    </div>
+  );
+};
+
+export default PerfectPath;

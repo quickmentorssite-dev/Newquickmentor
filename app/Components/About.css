@@ -1,0 +1,119 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .textContainer {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .sectionTitle {
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #00c37a;
+    display: inline-block;
+  }
+  
+  .heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #000062;
+    margin: 15px 0;
+    font-family: sans-serif;
+  }
+  
+  .subheading {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    font-family: math;
+  }
+  
+  .list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .icon {
+    color: #00c37a;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .ACheck{
+    font-size: 35px;
+    margin-left: 100px;
+    font-family: 'Geist';
+    font-weight: 700;
+    color: #00005e;
+  }
+  /* Responsive styles for phones (max-width 600px) */
+@media (max-width: 600px) {
+  #RABOUT .about {
+    flex-direction: column;      /* Stack image and text vertically */
+    align-items: center;
+        width: 60%;
+        padding: 0;
+  }
+
+  #RABOUT .imageContainer {
+    width: 100%;                 /* Full width */
+    text-align: center;          /* Center the image */
+    margin-bottom: 1rem;         /* Space below image */
+  }
+
+  #RABOUT .imageContainer img {
+    width: 80%;                  /* Responsive image size */
+    height: auto;
+  }
+
+  #RABOUT .textContainer {
+    width: 100%;                 /* Full width */
+    text-align: center;          /* Center text */
+    padding: 0 1rem;             /* Some horizontal padding */
+  }
+
+  #RABOUT .list {
+    padding-left: 0;             /* Remove left padding from list */
+    list-style: none;            /* Remove default bullets */
+  }
+
+  #RABOUT .list li {
+    margin-bottom: 0.75rem;      /* Space between list items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  #RABOUT .icon {
+    min-width: 20px;             /* Keep icon size consistent */
+  }
+}

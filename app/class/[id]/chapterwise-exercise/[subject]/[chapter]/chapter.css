@@ -1,0 +1,199 @@
+.chapter-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chapter-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.question-card {
+  background: #ffffff;
+  border: 2px solid #007acc;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.question-card:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.01);
+}
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+}
+
+.question-card.active .answer-wrapper {
+  max-height: 300px;
+  padding-top: 0.75rem;
+}
+
+.answer-text {
+  background-color: #e6f2ff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Down arrow styling */
+.down-arrow {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #007acc;
+  animation: bounce 1.2s infinite;
+}
+
+/* Hide down arrow when active */
+.question-card.active .down-arrow {
+  display: none;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+/* Main Container */
+.chapter-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff; /* dark background */
+  color: white;
+}
+
+/* Heading */
+.chapter-heading {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #facc15;
+  text-align: center;
+}
+
+/* Question Card */
+.question-card {
+  background-color: #ffffff;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.question-card:hover {
+  background-color: #ceecf1;
+}
+
+
+
+/* Question Text */
+.question-text {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+}
+
+/* Answer Section */
+.answer-wrapper {
+  padding-top: 10px;
+  border-top: 1px solid #4b5563;
+  margin-top: 10px;
+}
+
+.answer-text {
+  font-size: 1rem;
+  color: #000000;
+}
+
+/* Down Arrow Icon */
+.down-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 1.5rem;
+  color: #9ca3af;
+  transition: transform 0.3s;
+}
+
+.question-card.active .down-arrow {
+  transform: rotate(180deg);
+}
+
+/* ========================
+   Responsive Styles
+   ======================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .chapter-heading {
+    font-size: 1.6rem;
+  }
+
+  .question-text {
+    font-size: 1.05rem;
+  }
+
+  .answer-text {
+    font-size: 0.95rem;
+  }
+
+  .down-arrow {
+    font-size: 1.3rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .chapter-container {
+    padding: 12px;
+  }
+
+  .chapter-heading {
+    font-size: 1.4rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .answer-text {
+    font-size: 0.9rem;
+  }
+
+  .question-card {
+    padding: 12px;
+  }
+
+  .down-arrow {
+    right: 15px;
+    bottom: 15px;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,231 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+/* Hover and Active */
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: rgb(104, 142, 247);
+  color: white;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.dropdown-content li {
+  width: 100%;
+}
+
+.dropdown-content li a {
+  padding: 12px 16px;
+  color: #333;
+  border-radius: 0;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Arrow icon next to dropdown text */
+.arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+/* Basic Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 0.5rem 1rem;
+  color: white;
+  position: sticky;
+    top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-links li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger styles - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animate hamburger into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav-links by default on small screens */
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Show nav-links when menu is open */
+  .nav-links.active {
+    max-height: 1000px; /* large enough to show all items */
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /* Dropdown content inside mobile nav */
+  .nav-links .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #000000;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 8px;
+  }
+
+  /* Show dropdown if menu is active */
+  .nav-links.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+  }
+
+  .dropdown-content li a:hover {
+    background-color: #000000;
+  }
+}

@@ -1,0 +1,108 @@
+.WMain {
+    background-image: url('/NavBack.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: relative; /* needed for absolutely-positioned children */
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    color: aliceblue;
+    overflow: hidden; /* prevents wave from overflowing */
+    display: flex;
+  }
+  .MainLeft img {
+    animation: floatStudent 4s ease-in-out infinite;
+    margin: 40px 50px 100px 20px;
+    width: 350PX;
+  }
+  .MRBottom select{
+    background: #6aed6a;
+    border: none;
+  }
+  
+  @keyframes floatStudent {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  
+.MainLeft{
+    width: 400px;
+    margin: 120px 50px 100px 80px;
+}
+  
+.MainRight{
+    width: 600px;
+    margin: 150px 20px 150px 150px;
+}
+.MRTop{
+    font-size: 45px;
+    font-family: 'Geist Mono';
+    font-weight: 900;
+    color: #ffffffa8;
+}
+.MRCenter{
+    font-family: system-ui;
+    font-size: 15px;
+    margin: 50px 0;
+}
+.MRBottom button{
+    padding: 10px 20px;
+    background-color: #59b54d;
+    border-radius: 15px;
+    border: none;
+    color: aliceblue;
+    font-size: 17px;
+    font-weight: 800;
+}
+.MRBottom span{
+    font-family: cursive;
+    color: #59b54d;
+    margin-left: 20px;
+}
+.MRTop span{
+    color: aliceblue;
+    text-decoration: underline;
+    text-decoration-color: #f0f8ff5c;
+}
+/* Responsive styles for phones (max-width: 600px) */
+@media (max-width: 600px) {
+  #RHOME {
+    display: flex;
+    flex-direction: column; /* stack right and left vertically */
+    align-items: center;
+  ;
+  }
+
+  #RHOME .MainRight,
+  #RHOME .MainLeft {
+    width: 100%;           /* full width on small screens */
+    max-width: 400px;      /* optional max width for better reading */
+    text-align: center;    /* center text inside */
+    margin: 100px 20px;
+  }
+
+  #RHOME .MainLeft img {
+    width: 80%;            /* responsive image width */
+    height: auto;
+    margin:  auto 0;
+    display: block;
+  }
+
+  #RHOME .MRTop {
+    font-size: 1.4rem;     /* adjust heading size for phones */
+  }
+
+  #RHOME .MRCenter {
+    font-size: 1rem;       /* paragraph font size for phones */
+    margin: 1rem 0;
+  }
+
+  #RHOME .MRBottom button {
+    width: 100%;           /* make button full width */
+    font-size: 1.1rem;     /* slightly bigger font for easy tapping */
+    padding: 12px 0;
+    border-radius: 10px;
+  }
+}

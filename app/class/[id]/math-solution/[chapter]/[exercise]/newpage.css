@@ -1,0 +1,183 @@
+/* ===================== */
+/* THEME COLOR VARIABLES */
+/* ===================== */
+
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --card-border: #007acc;
+  --answer-bg: #e6f2ff;
+  --mcq-border: #ccc;
+  --mcq-hover-bg: #cce7ff;
+  --down-arrow: #007acc;
+}
+
+.dark {
+  --bg-color: #0d0d0d;
+  --text-color: #ffffff;
+  --card-bg: #2c2c2c;
+  --card-border: #00bfff;
+  --answer-bg: #333333;
+  --mcq-border: #666666;
+  --mcq-hover-bg: #005f99;
+  --down-arrow: #00bfff;
+}
+
+/* ===================== */
+/* BASE STYLES           */
+/* ===================== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ===================== */
+/* MAIN CONTENT STYLES   */
+/* ===================== */
+
+.chapter-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chapter-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--text-color);
+  transition: color 0.4s ease;
+  word-wrap: break-word;
+}
+
+/* ===================== */
+/* QUESTION CARD STYLES  */
+/* ===================== */
+
+.question-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.question-card:hover {
+  background-color: var(--mcq-hover-bg);
+  transform: scale(1.01);
+}
+
+.question-card.active {
+  background-color: #e0f2fe; /* Light highlight when active */
+}
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+/* Answer Reveal Section */
+
+.answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+  margin-top: 16px;
+  padding-left: 10px;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.question-card.active .answer-wrapper {
+  max-height: 300px;
+  padding-top: 0.75rem;
+}
+
+.answer-text {
+  background-color: var(--answer-bg);
+  color: var(--text-color);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.answer-text ol,
+.answer-text ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.answer-text li {
+  margin-bottom: 8px;
+}
+
+/* Down Arrow Animation */
+
+.down-arrow {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--down-arrow);
+  animation: bounce 1.2s infinite;
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.question-card.active .down-arrow {
+  display: none;
+  transform: rotate(180deg);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ========================== */
+/* MCQ OPTIONS STYLING        */
+/* ========================== */
+
+.answer-options li {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--mcq-border);
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.answer-options li:hover {
+  background-color: var(--mcq-hover-bg);
+}
+
+.answer-options li.selected.correct {
+  background-color: lightgreen;
+}
+
+.answer-options li.selected.incorrect {
+  background-color: salmon;
+}

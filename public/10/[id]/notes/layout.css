@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Layout wrapper */
+  .layout-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header bar */
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Hamburger menu button */
+  .hamburger {
+    font-size: 22px;
+    margin-right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Overall layout after header */
+  .content {
+    display: flex;
+    height: 100%;
+  }
+  
+  /* Sidebar (left panel) */
+  .sidebar {
+    width: 280px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+  }
+  
+  /* Sidebar search box */
+  .sidebar input[type="text"],
+  .Search-Subject {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  /* Subject sections */
+  .subject-group {
+    margin-bottom: 24px;
+  }
+  
+  .subject-group h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 12px 0 8px;
+  }
+  
+  .subject-group ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .subject-group ul li {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    transition: background 0.2s;
+  }
+  
+  .subject-group ul li:hover {
+    background: #f4f4f4;
+  }
+  
+  .subject-group ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .chapter-link {
+    background: none;
+    border: none;
+    color: #3f3f3f;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+  }
+  
+  .chapter-link:hover {
+    color: #6f85ff;
+  }
+  
+  .no-chapters {
+    color: #999;
+    font-size: 14px;
+  }
+  
+  /* Main content area (right panel) */
+  .main-content {
+    flex: 1;
+    padding: 24px;
+    transition: all 0.3s ease;
+    text-align: left; /* ✅ Ensure text isn't centered */
+  }
+  
+  /* Full-width when sidebar is hidden */
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Paragraph text in content */
+  .main-content p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* PDF iframe styling */
+  .main-content iframe {
+    display: block;
+    width: 100%;
+    height: 90vh;
+    border: none;
+    margin: 0;
+  }
+  

@@ -1,0 +1,114 @@
+.SUP{
+    display: flex;
+    background-color: #efefef8a;
+}
+.SRight{
+    margin: 300px 40px 40px 100px;
+    width: 400px;
+    height: 400px;
+}
+.SNotes{
+    color: #52ff52;
+    font-size: 20px;
+    font-family: 'Geist Mono';
+    font-weight: 500;
+    background-color: #c7ffc6;
+    display: inline;
+    padding: 5px 10px;
+}
+.SAN{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: system-ui;
+    color: #020054;
+    width: 350px;
+    margin-top: 20px;
+}
+.SMAN{
+    font-family: sans-serif;
+    margin-top: 20px;
+    color: #464646;
+}
+.SCT{
+    width: 250px;
+    height: 100px;
+    padding-top: 100px;
+    margin: 100px 20px 20px 20px;
+    /* box-shadow: 6px 2px 15px; */
+    padding: 100px 20px;
+    background-color: white;
+}
+.SCB{
+    width: 250px;
+    height: 70px;
+    padding-top: 100px;
+    margin: 10px 20px 20px 20px;
+    /* box-shadow: 6px 2px 15px; */
+    padding: 100px 20px;
+    background-color: white;
+}
+.SB{
+    display: flex;
+    background-color: #efefef8a;
+    justify-content: space-around;
+    gap: 50PX;
+    height: 200px;
+}
+.SBW{
+    background-color: white;
+    padding: 20px;
+    height: 120px;
+    width: 600px;
+    margin: 0 40px 40px 40px;
+}
+.SBA{
+    color: #504f4f;
+    font-family: 'Geist';
+    margin: 20px;
+}
+/* MOBILE ONLY - max width 600px */
+@media (max-width: 600px) {
+  .SUP {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* Stack the three main blocks vertically */
+  .SRight,
+  .SCenter {
+    width: 100%;
+    margin: 100px 0 0 0 ;
+  }
+
+  /* If you want the two .SCenter divs stacked vertically as well */
+  .SCenter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .SB {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .SBW {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Optional: Adjust font sizes for smaller screens */
+  .SAN {
+    font-size: 1.2rem;
+  }
+
+  .SMAN, .SBA {
+    font-size: 1rem;
+  }
+
+}

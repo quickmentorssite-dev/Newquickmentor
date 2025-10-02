@@ -1,0 +1,215 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #000;
+  --box-color: #ffffff;
+  --option-bg: #eee;
+  --option-hover: #ddd;
+  --typing-border: #999;
+  --correct-text: #4ade80;
+}
+
+body.dark {
+  --bg-color: #000;
+  --text-color: #fff;
+  --box-color: #1e1e1e;
+  --option-bg: #2a2a2a;
+  --option-hover: #444;
+  --typing-border: #555;
+  --correct-text: #4ade80;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.chapter-wrapper {
+  padding: 24px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.chapter-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question-box {
+  background-color: var(--box-color);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.question-text {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-item {
+  display: block;
+}
+
+.option-btn {
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  background-color: var(--option-bg);
+  border: 1px solid #999;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  color: var(--text-color);
+}
+
+.option-btn:hover {
+  background-color: var(--option-hover);
+}
+
+.typing-text {
+  font-style: italic;
+  border-left: 3px solid var(--typing-border);
+  padding-left: 10px;
+  white-space: pre-wrap;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.correct-answer {
+  color: var(--correct-text);
+  font-weight: bold;
+}
+
+.error-msg {
+  color: red;
+  font-size: 18px;
+  padding: 20px;
+}
+/* Container wrapper */
+.chapter-wrapper {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Title */
+.chapter-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #222;
+}
+
+/* Questions container: vertical stack */
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Individual question box */
+.question-box {
+  background: #fefefe;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.question-box:hover {
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.15);
+}
+
+/* Question text */
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+/* Options list styling */
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Option item */
+
+
+/* Option buttons */
+.option-btn {
+  width: 100%;
+  background: #eaeaea;
+  border: 1.5px solid #bbb;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  color: #222;
+}
+
+.option-btn strong {
+  margin-right: 0.5rem;
+}
+
+/* Hover and focus states for buttons */
+.option-btn:hover,
+.option-btn:focus {
+  background-color: #d2d2d2;
+  border-color: #888;
+  outline: none;
+}
+
+/* Typing text feedback */
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .chapter-wrapper {
+    padding: 0 0.75rem;
+  }
+
+  .chapter-title {
+    font-size: 1.6rem;
+  }
+
+  .question-box {
+    padding: 1rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .option-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
