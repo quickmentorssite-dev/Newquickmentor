@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import MathJax from 'react-mathjax-preview';
+import { MathJax, MathJaxContext } from "better-react-mathjax";
+
 import './newpage.css';
 
 export default function MathExercise({ id, chapter, exercise, exerciseData }) {
