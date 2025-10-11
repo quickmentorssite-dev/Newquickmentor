@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "better-react-mathjax": "^2.3.0",
     "lucide-react": "^0.507.0",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-mathjax-preview": "^2.2.6",
     "slugify": "^1.6.6"
   },
   "devDependencies": {
