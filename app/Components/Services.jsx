@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import './Services.css';
-import LoginModal from '../LoginModal'; // Reuse the same modal!
+import LoginModal from './LoginModal'; // Reuse the same modal!
 
 const Services = () => {
     const [showModal, setShowModal] = useState(false);

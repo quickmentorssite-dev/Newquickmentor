@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import './Main.css';
-import LoginModal from '../components/LoginModal';
+import LoginModal from './LoginModal';
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);

@@ -28,6 +28,10 @@ yarn-error.log
 *.pem
 .DS_Store
 *.log
+# misc
+.DS_Store
+npm-debug.log*
+yarn-error.log*
 
 # debug
 npm-debug.log*
